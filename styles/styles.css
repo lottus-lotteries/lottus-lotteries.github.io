@@ -1,0 +1,349 @@
+@font-face {
+    font-family: 'montserrat';
+    src: url(../assets/Montserrat-VariableFont_wght.ttf)
+}
+@font-face {
+    font-family: 'montserrat-bold';
+    src: url(../assets/Montserrat-Bold.ttf)
+}
+html {
+    background-image: linear-gradient(to right bottom, #3a015c, #3a003c, #2f0224, #1f0212, #000000);    /*background-image: linear-gradient(to right bottom, #3a015c, #5d3a83, #826ca9, #ab9fce, #d8d4f2);*/
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+input, button {
+    background-color: aquamarine;
+}
+
+a, h1, h3, p {
+    text-decoration: none;
+    font-family: 'montserrat-bold';
+    color: white;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 900px) {
+    .nav-bar-container {
+        height: 17vh;
+        flex-direction: row;
+    }
+    .nav-bar-image-container{
+        width: 20%;
+        height: 50%;
+    }
+    .nav-bar-image-image {
+        height: 95%;
+        margin-left: 40px;
+    }
+    .nav-bar-links-container{
+        width: 60%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .nav-bar-link {
+        width: 20%;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .left-title-card-container {
+        width: 80%;
+        height: 83vh;
+    }
+    .left-title-card-title {
+        font-size: 4.5vw;
+        margin: 0 0 0 2vw;
+    }
+    .left-title-card-description {
+        font-size: 2vw;
+        margin: 0 0 0 2vw;
+    }
+    .centered-title-card-container {
+        width: 60vw;
+        height: 33vh;
+        justify-content: center;
+    }
+    .centered-title-card-container p, h1 {
+        margin: 5px;
+    }
+    .multi-cards-container {
+        height: 66vh;
+    }
+    .multi-cards-card {
+        width: 20%;
+        height: 50%;
+        margin: auto 0 auto 0;
+        border-radius: 15px;
+    }
+    .multi-cards-title {
+        padding: 20px 0 20px 0;
+    }
+    .multi-cards-description {
+        font-size: 1vw;
+        padding: 10px;
+        text-align: center;
+    }
+    .centered-title-w-profiles-container {
+        height: 50vh;
+    }
+    .profile-container {
+        height: 100%;
+        width: 24%;
+        justify-content: center;
+    }
+    .round-photo-container {
+        width: 70%;
+    }
+    .email-form-container{
+        margin-top: 30px;
+        width: 50%;
+        height: 40px;
+    }
+    #email-form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .email-form-input {
+        flex-grow: 8;
+        height: 100%;
+        border: none;
+        padding: 5px 10px;
+        color: white;
+    }
+    .email-form-input:focus {
+        outline: none;
+    }
+    #email-form button {
+        flex-grow: 2;
+        border: none;
+        height: 100%;
+        border-left: 1px solid darkgray;
+    }
+    #email-form button:active {
+        height: 100%;
+        border: 2px solid black;
+    }
+}
+@media screen and (max-width: 899px) {
+    .nav-bar-container {
+        height: 13vh;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .nav-bar-image-container{
+        width: 100%;
+        height: 60%;
+    }
+    .nav-bar-image-image {
+        height: 65%;
+    }
+    .nav-bar-links-container{
+        height: 0;
+        display: none
+    }
+    .left-title-card-container {
+        width: 95%;
+        margin-left: 2.5%;
+        height: 87vh;
+    }
+    .left-title-card-title {
+        font-size: 8vw;
+        margin: 0 0 0 2vw;
+        text-align: center;
+    }
+    .left-title-card-description {
+        font-size: 4vw;
+        margin: 0 0 0 2vw;
+        text-align: center;
+    }
+    .centered-title-card-container {
+        width: 90vw;
+        height: auto;
+    }
+    .centered-title-card-container p {
+        margin: 5px;
+        font-size: 4vw;
+        text-align: center;
+    }
+    .centered-title-card-container h1{
+        margin: 5px;
+        font-size: 7vw;
+    }
+    .multi-cards-container {
+        height: auto;
+    }
+    .multi-cards-card {
+        width: 70%;
+        height: auto;
+        margin: 20px 0 20px 0;
+        border-radius: 30px;
+    }
+    .multi-cards-title {
+        height: 12%;
+        font-size: 5.5vw;
+    }
+    .multi-cards-description {
+        font-size: 3vw;
+        text-align: center;
+        height: auto;
+    }
+    .centered-title-w-profiles-container {
+        height: auto;
+    }
+    .title-w-profiles-title {
+        margin-top: 7vh;
+    }
+    .profile-container {
+        height: 20vh;
+        width: 49%;
+        justify-content: start;
+    }
+    .round-photo-container {
+        width: 50%;
+    }
+    .profile-description{
+        font-size: 3vw;
+        text-align: center;
+    }
+    .centered-title-card-container #email-title{
+        margin-top: 10vh;
+        font-size: 5vw;
+        text-align: center;
+    }
+    .centered-title-card-container #email-description{
+        font-size: 3vw;
+        text-align: center;
+    }
+    .email-form-container{
+        width: 80%;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+    #email-form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .email-form-input {
+        flex-grow: 8;
+        height: 100%;
+        border: none;
+        padding: 5px 10px;
+        color: white;
+    }
+    .email-form-input:focus {
+        outline: none;
+    }
+    #email-form button {
+        flex-grow: 2;
+        padding: 5px 10px;
+        border: none;
+        height: 100%;
+        border-left: 1px solid darkgray;
+    }
+    #email-form button:active {
+        height: 80%;
+        border: 2px solid black;
+    }
+}
+.nav-bar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+
+}
+.nav-bar-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-bar-image-image {
+    object-fit: contain;
+}
+.left-title-card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.centered-title-card-container {
+    align-items: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+.multi-cards-container {
+    width: 90vw;
+    margin: 0 5% 0 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.multi-cards-card {
+    border: 1px dotted white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;}
+
+.multi-cards-title {
+    text-align: center;
+}
+.multi-cards-description {
+    margin: auto 0 auto 0;
+    padding: 10px;
+}
+.centered-title-w-profiles-container {
+    width: 90vw;
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: column;
+}
+.title-w-profiles-title {
+    text-align: center;
+}
+.title-w-profiles-description {
+    text-align: center;
+    margin-top: -7px;
+}
+.titled-profiles-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+}
+.profile-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.round-photo-container {
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+}
+.email-form-container{
+    display: flex;
+}
+.round-photo-container {
+    border: 1px dotted white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+.divider{
+    width: 80vw;
+    margin: 10px 10vw;
+    height: 1px;
+    background-color: lightgray;
+}
+
+
