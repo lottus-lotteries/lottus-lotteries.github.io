@@ -28,6 +28,12 @@ a, h1, h3, p {
     font-weight: bold;
 }
 
+.round-photo-container img {
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+}
+
 @media only screen and (min-width: 900px) {
     .nav-bar-container {
         height: 17vh;
@@ -214,7 +220,6 @@ a, h1, h3, p {
     }
     .profile-description{
         font-size: 3vw;
-        text-align: center;
     }
     .centered-title-card-container #email-title{
         margin-top: 10vh;
@@ -292,6 +297,9 @@ a, h1, h3, p {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+.profile-description {
+    text-align: center;
 }
 .multi-cards-card {
     border: 1px dotted white;
