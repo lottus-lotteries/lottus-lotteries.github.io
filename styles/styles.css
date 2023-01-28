@@ -7,7 +7,8 @@
     src: url(../assets/Montserrat-Bold.ttf)
 }
 html {
-    background-image: linear-gradient(to right bottom, #3a015c, #3a003c, #2f0224, #1f0212, #000000);    /*background-image: linear-gradient(to right bottom, #3a015c, #5d3a83, #826ca9, #ab9fce, #d8d4f2);*/
+    /*background-image: linear-gradient(to right bottom, #3a015c, #3a003c, #2f0224, #1f0212, #000000);    !*background-image: linear-gradient(to right bottom, #3a015c, #5d3a83, #826ca9, #ab9fce, #d8d4f2);*!*/
+    background-image: linear-gradient(to right bottom, #3a015c, #3f196d, #432b7d, #483c8d, #4c4c9d);
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -271,6 +272,7 @@ a, h1, h3, p {
 }
 .nav-bar-image-image {
     object-fit: contain;
+    height: 85%;
 }
 .left-title-card-container {
     display: flex;
