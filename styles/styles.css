@@ -21,7 +21,7 @@ input, button {
     background-color: aquamarine;
 }
 
-a, h1, h3, p {
+a, h1, h3, p, button {
     text-decoration: none;
     font-family: 'montserrat-bold';
     color: white;
@@ -266,7 +266,7 @@ a, h1, h3, p {
 }
 
 @media screen and (max-width: 949px) and (min-width: 750px) {
-    
+
 }
 .nav-bar-container {
     width: 100%;
@@ -359,5 +359,10 @@ a, h1, h3, p {
     height: 1px;
     background-color: lightgray;
 }
+
+.email-form-container button{
+    color: #4c4c9d;
+}
+
 
 
