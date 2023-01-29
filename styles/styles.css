@@ -21,6 +21,10 @@ input, button {
     background-color: aquamarine;
 }
 
+.divider {
+    display: none;
+}
+
 a, h1, h3, p, button {
     text-decoration: none;
     font-family: 'montserrat-bold';
@@ -76,11 +80,13 @@ a, h1, h3, p, button {
         width: 60vw;
         height: 33vh;
         justify-content: center;
+        padding: 0 20vw;
     }
     .centered-title-card-container p, h1 {
         margin: 5px;
     }
     .multi-cards-container {
+        margin: 0 5% 0 5%;
         height: 66vh;
     }
     .multi-cards-card {
@@ -104,6 +110,7 @@ a, h1, h3, p, button {
         height: 100%;
         width: 24%;
         justify-content: center;
+
     }
     .round-photo-container {
         width: 70%;
@@ -161,7 +168,7 @@ a, h1, h3, p, button {
     .left-title-card-container {
         width: 95%;
         margin-left: 2.5%;
-        height: 87vh;
+        height: 70vh;
     }
     .left-title-card-title {
         font-size: 8vw;
@@ -176,17 +183,20 @@ a, h1, h3, p, button {
     .centered-title-card-container {
         width: 90vw;
         height: auto;
+        padding: 5vw 5vw;
     }
     .centered-title-card-container p {
         margin: 5px;
-        font-size: 4vw;
+        font-size: 3.5vw;
         text-align: center;
     }
     .centered-title-card-container h1{
         margin: 5px;
-        font-size: 7vw;
+        font-size: 5vw;
     }
     .multi-cards-container {
+        margin-top: 30px;
+        margin-left: 5vw;
         height: auto;
     }
     .multi-cards-card {
@@ -197,21 +207,26 @@ a, h1, h3, p, button {
     }
     .multi-cards-title {
         height: 12%;
-        font-size: 5.5vw;
+        font-size: 4vw;
     }
     .multi-cards-description {
-        font-size: 3vw;
+        font-size: 2.5vw;
         text-align: center;
         height: auto;
     }
     .centered-title-w-profiles-container {
         height: auto;
+        margin-top: 30px;
+    }
+    .title-w-profiles-description{
+        padding-bottom: 30px;
+        font-size: 3vw;
     }
     .title-w-profiles-title {
-        margin-top: 7vh;
+        margin-top: 3vw;
     }
     .profile-container {
-        height: 20vh;
+        height: 18vh;
         width: 49%;
         justify-content: start;
     }
@@ -219,15 +234,15 @@ a, h1, h3, p, button {
         width: 50%;
     }
     .profile-description{
-        font-size: 3vw;
+        font-size: 2.5vw;
     }
-    .centered-title-card-container #email-title{
-        margin-top: 10vh;
-        font-size: 5vw;
+    .centered-title-card-container #email-title {
+        margin-top: 5vh;
+        font-size: 4vw;
         text-align: center;
     }
     .centered-title-card-container #email-description{
-        font-size: 3vw;
+        font-size: 2.5vw;
         text-align: center;
     }
     .email-form-container{
@@ -266,7 +281,123 @@ a, h1, h3, p, button {
 }
 
 @media screen and (max-width: 949px) and (min-width: 750px) {
-
+    .nav-bar-container {
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+    .nav-bar-image-container{
+        width: auto;
+        height: 50%;
+    }
+    .nav-bar-image-image {
+        height: 30%;
+    }
+    .nav-bar-links-container{
+        width: 60%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .nav-bar-link {
+        width: 20%;
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+    .left-title-card-container {
+        width: 80%;
+        height: 90vh;
+        margin-left: 10%;
+    }
+    .left-title-card-title {
+        font-size: 4.5vw;
+        margin: 0 0 0 2vw;
+    }
+    .left-title-card-description {
+        font-size: 2vw;
+        margin: 0 0 0 2vw;
+    }
+    .centered-title-card-container {
+        width: 60vw;
+        height: 27vh;
+        justify-content: center;
+        padding: 0 20vw;
+    }
+    .centered-title-card-container p, h1 {
+        margin: 5px;
+    }
+    .centered-title-card-container p {
+        text-align: center;
+    }
+    .multi-cards-container {
+        height: 33vh;
+        margin: 0 5% 0 5%;
+    }
+    .multi-cards-card {
+        width: 25%;
+        height: 50%;
+        margin: auto 0 auto 0;
+        border-radius: 15px;
+    }
+    .multi-cards-title {
+        padding: 20px 0 20px 0;
+    }
+    .multi-cards-description {
+        font-size: 1vw;
+        padding: 10px;
+        text-align: center;
+    }
+    .centered-title-w-profiles-container {
+        height: 35vh;
+    }
+    .profile-container {
+        width: 24%;
+        justify-content: center;
+    }
+    .round-photo-container {
+        width: 70%;
+    }
+    .email-form-container{
+        margin-top: 30px;
+        width: 50%;
+        height: 40px;
+    }
+    #email-form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .email-form-input {
+        flex-grow: 8;
+        height: 100%;
+        border: none;
+        padding: 5px 10px;
+        color: white;
+    }
+    .email-form-input:focus {
+        outline: none;
+    }
+    #email-form button {
+        flex-grow: 2;
+        border: none;
+        height: 100%;
+        border-left: 1px solid darkgray;
+    }
+    #email-form button:active {
+        height: 100%;
+        border: 2px solid black;
+    }
+    #email-title {
+        text-align: center;
+    }
+    .title-w-profiles-title{
+        padding-bottom: 20px;
+    }
 }
 .nav-bar-container {
     width: 100%;
@@ -295,8 +426,7 @@ a, h1, h3, p, button {
     flex-direction: column;
 }
 .multi-cards-container {
-    width: 90vw;
-    margin: 0 5% 0 5%;
+    margin: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
