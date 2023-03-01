@@ -1,0 +1,54 @@
+html {
+    background: linear-gradient(101.14deg, #4C3685 38.67%, #134EBC 97.48%);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins';
+}
+.banner h2{
+    text-align: center;
+}
+
+.maintainence {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    row-gap: 0.5rem;
+    color: white;
+}
+
+#logo {
+    height: 10%;
+    width: 15%;
+}
+
+.email-form-container {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+#email-form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    column-gap: 1em;
+}
+
+.email-form-input {
+    padding: 0.5em;
+    border-radius: 0.5em;
+    outline: none;
+    width: 15rem;
+}
+
+.submit-btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem ;
+}
