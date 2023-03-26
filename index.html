@@ -12,7 +12,25 @@
     <!-- Safari Pinned Tab Icon -->
     <!-- <link rel="mask-icon" href="https://www.wix.com/favicon.ico"> -->
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const faqQuestions = document.querySelectorAll(".faq-question");
 
+            faqQuestions.forEach((question) => {
+                question.addEventListener("click", function () {
+                    const activeAnswer = document.querySelector(".faq-answer.active");
+                    if (activeAnswer) {
+                        activeAnswer.classList.remove("active");
+                    }
+
+                    const answer = this.nextElementSibling;
+                    if (answer !== activeAnswer) {
+                        answer.classList.add("active");
+                    }
+                });
+            });
+        });
+    </script>
     <!-- Legacy Polyfills -->
     <script nomodule="" src="https://static.parastorage.com/unpkg/core-js-bundle@3.2.1/minified.js"></script>
     <script nomodule=""
@@ -6691,7 +6709,7 @@
     }
 
     #masterPage.mesh-layout #PAGES_CONTAINER, #masterPage.mesh-layout #SITE_FOOTER, #masterPage.mesh-layout #SITE_FOOTER_WRAPPER, #masterPage.mesh-layout #SITE_HEADER, #masterPage.mesh-layout #SITE_HEADER_WRAPPER, #masterPage.mesh-layout #SITE_PAGES, #masterPage.mesh-layout #masterPageinlineContent, #site-root {
-        position: relative
+        position: relative;
     }
 
     #site-root {
@@ -7641,7 +7659,7 @@
     }
 
     .tcsOnZ .vkyGBO.PVTOEq {
-        background-color: rgba(var(--bg-scrl, var(--color_11)), var(--alpha-bg-scrl, 1));
+        background-color: #170249;
         border-bottom: var(--brwb-scrl, 0) solid var(--screenwidth-corvid-border-color, rgba(var(--brd-scrl, var(--color_15)), var(--alpha-brd-scrl, 1)));
         border-top: var(--brwt-scrl, 0) solid var(--screenwidth-corvid-border-color, rgba(var(--brd-scrl, var(--color_15)), var(--alpha-brd-scrl, 1)));
         box-shadow: var(--shd-scrl, 0 0 5px rgba(0, 0, 0, .5))
@@ -8252,7 +8270,6 @@
         top: var(--top, auto);
         z-index: var(--z-index, auto)
     }
-
     .MazNVa .BI8PVQ img {
         box-shadow: 0 0 0 #000;
         position: static;
@@ -10075,7 +10092,8 @@
 
     [data-mesh-id=comp-kkpgrpc9inlineContent] {
         height: auto;
-        width: 100%
+        width: 100%;
+        display: none;
     }
 
     [data-mesh-id=comp-kkpgrpc9inlineContent-gridContainer] {
@@ -10548,7 +10566,7 @@
     }
 
     #SITE_HEADER {
-        --bg: var(--color_11);
+        --bg: #170249;
         --brwt: 0px;
         --brd: var(--color_15);
         --brwb: 0px;
@@ -10620,7 +10638,7 @@
     }
 
     #comp-kkpgr9a3 {
-        --bg-overlay-color: transparent;
+        --bg-overlay-color: #170249;
         --bg-gradient: none;
         width: 100%;
         --column-width: 245px;
@@ -11821,7 +11839,6 @@
 
     #comp-lfhb8yg6 {
         width: 1041px;
-        height: 761px
     }
 
     #comp-leu7x1tv {
@@ -12240,7 +12257,76 @@
     #comp-kkpk4wlf {
         height: auto
     }
+    .faq-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
+    .faq-question {
+        background-color: #3649D9;
+        color: #fff;
+        padding: 10px 15px;
+        cursor: pointer;
+        margin-bottom: 10px;
+        border-radius: 3px;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        background-color: #f1f1f1;
+        padding: 0 15px;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        font-size: 15px; /* Increase base font size */
+        line-height: 1.6;
+    }
+
+    .faq-answer.active {
+        max-height: 200px; /* Adjust this value based on your maximum answer height */
+        padding: 10px 15px;
+    }
+
+
+    faq-section {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2.5em; /* Increase title font size */
+        text-align: center; /* Center the title */
+        margin-bottom: 30px; /* Add more space below the title */
+    }
+
+    .faq-question {
+        font-size: 1.1em; /* Increase question font size */
+        background-color: #3649D9;
+        color: #fff;
+        padding: 15px 20px; /* Increase padding for more spacing */
+        cursor: pointer;
+        border-radius: 3px;
+    }
+
+    .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        background-color: #f1f1f1;
+        padding: 0 20px; /* Increase horizontal padding */
+        margin-bottom: 20px; /* Add more space between answers */
+        border-radius: 3px;
+        transition: max-height 0.5s ease, padding 0.5s ease;
+    }
+
+    .faq-answer.active {
+        max-height: 300px; /* Adjust this value based on your maximum answer height */
+    }
     #comp-lf2r2p6a {
         --stroke-width: 3;
         --fill-opacity: 0;
@@ -12761,7 +12847,36 @@
         </div>
         <div id="site-root" class="site-root">
             <div id="masterPage" class="mesh-layout masterPage">
-                <header class="SITE_HEADER_WRAPPER" style="margin-top: 0" tabindex="-1" id="SITE_HEADER_WRAPPER"><div id="SITE_HEADER" style="margin-top: 0;" class="tcsOnZ DPp8M_ RLRBWe SITE_HEADER wixui-header" tabindex="-1"><div class="PVTOEq vkyGBO"></div><div><div><div data-mesh-id="SITE_HEADERinlineContent" data-testid="inline-content" class=""><div data-mesh-id="SITE_HEADERinlineContent-gridContainer" data-testid="mesh-container-content"><section id="comp-kkpgr98y" class="comp-kkpgr98y Lw0u6i wixui-column-strip"><div id="bgLayers_comp-kkpgr98y" data-hook="bgLayers" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-kkpgr98y" class="VgO9Yg"></div></div><div data-testid="columns" class="So7Ias"><div id="comp-kkpgr9a3" class="comp-kkpgr9a3 YzqVVZ wixui-column-strip__column"><div id="bgLayers_comp-kkpgr9a3" data-hook="bgLayers" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-kkpgr9a3" class="VgO9Yg"></div></div><div data-mesh-id="comp-kkpgr9a3inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-kkpgr9a3inlineContent-gridContainer" data-testid="mesh-container-content"><div id="comp-kkpgsi38" class="KcpHeO tz5f0K comp-kkpgsi38 wixui-rich-text" data-testid="richTextElement"><p class="font_4" style="font-size:32px; line-height:1.2em;"><span style="font-size:32px;"><span class="color_18"><a href="https://alexanderlambropou.wixsite.com/my-site" target="_self"><span style="letter-spacing:0.04em;">LOTTUS</span></a></span></span></p></div></div></div></div><div id="comp-kkpgrpc9" class="comp-kkpgrpc9 YzqVVZ wixui-column-strip__column"><div id="bgLayers_comp-kkpgrpc9" data-hook="bgLayers" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-kkpgrpc9" class="VgO9Yg"></div></div><div data-mesh-id="comp-kkpgrpc9inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-kkpgrpc9inlineContent-gridContainer" data-testid="mesh-container-content"><wix-dropdown-menu id="comp-kkpgzzil" class="BSjLjI R7lArd comp-kkpgzzil wixui-dropdown-menu hidden-during-prewarmup" tabindex="-1" dir="ltr" data-stretch-buttons-to-menu-width="false" data-same-width-buttons="false" data-num-items="0" data-menuborder-y="0" data-menubtn-border="0" data-ribbon-els="0" data-label-pad="0" data-ribbon-extra="0" data-dropalign="center" style="visibility: inherit; overflow-x: visible;" data-dropmode="dropDown"><nav class="l9EQj1" id="comp-kkpgzzilnavContainer" aria-label="Site"><ul class="DN7syf" id="comp-kkpgzzilitemsContainer" style="text-align:center" data-marginallchildren="true"><li id="comp-kkpgzzil__more__" data-direction="ltr" data-listposition="center" data-state="menu false  header" data-index="__more__" data-dropdown="false" class="iryznZ vDnwi4" data-original-gap-between-text-and-btn="10" aria-hidden="true" style="height: 0px; overflow: hidden; position: absolute; visibility: hidden;"><div data-testid="linkElement" class="lY3Nwh" tabindex="0" aria-haspopup="false"><div class="rBTT56"><div class="" style="text-align:right"><p class="foFAdY" style="text-align:right" id="comp-kkpgzzil__more__label" tabindex="-1">More</p></div></div></div></li></ul><div class="JdScD2" id="comp-kkpgzzildropWrapper" data-dropalign="center" data-dropdown-shown="false"><ul class="k8K0Wj wixui-dropdown-menu__submenu" id="comp-kkpgzzilmoreContainer"></ul></div><div style="display:none" id="comp-kkpgzzilnavContainer-hiddenA11ySubMenuIndication">Use tab to navigate through the menu items.</div></nav></wix-dropdown-menu><div id="comp-leujl5hz" class="comp-leujl5hz wixui-vector-image"><div data-testid="svgRoot-comp-leujl5hz" class="aizuI7 TcoJIb comp-leujl5hz"><svg preserveAspectRatio="none" data-bbox="20 49 160 102" viewBox="20 49 160 102" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true">
+                <header class="SITE_HEADER_WRAPPER" style="margin-top: 0" tabindex="-1" id="SITE_HEADER_WRAPPER"><div id="SITE_HEADER" style="margin-top: 0;" class="tcsOnZ DPp8M_ RLRBWe SITE_HEADER wixui-header" tabindex="-1"><div class="PVTOEq vkyGBO"></div><div><div>
+                    <div data-mesh-id="SITE_HEADERinlineContent" data-testid="inline-content" class="">
+                        <div data-mesh-id="SITE_HEADERinlineContent-gridContainer" data-testid="mesh-container-content">
+                            <section id="comp-kkpgr98y" class="comp-kkpgr98y Lw0u6i wixui-column-strip"><div id="bgLayers_comp-kkpgr98y" data-hook="bgLayers" class="MW5IWV">
+                                <div data-testid="colorUnderlay" class="LWbAav Kv1aVt">
+
+                                </div>
+                                <div id="bgMedia_comp-kkpgr98y" class="VgO9Yg">
+
+                                </div>
+                            </div>
+                                <div data-testid="columns" class="So7Ias">
+                                    <div id="comp-kkpgr9a3" class="comp-kkpgr9a3 YzqVVZ wixui-column-strip__column">
+                                        <div id="bgLayers_comp-kkpgr9a3" data-hook="bgLayers" class="MW5IWV">
+                                            <div data-testid="colorUnderlay" class="LWbAav Kv1aVt">
+
+                                            </div>
+                                            <div id="bgMedia_comp-kkpgr9a3" class="VgO9Yg">
+
+                                            </div>
+                                        </div>
+                                        <div data-mesh-id="comp-kkpgr9a3inlineContent" data-testid="inline-content" class="">
+                                            <div data-mesh-id="comp-kkpgr9a3inlineContent-gridContainer" data-testid="mesh-container-content">
+                                                <div id="comp-kkpgsi38" class="KcpHeO tz5f0K comp-kkpgsi38 wixui-rich-text" data-testid="richTextElement">
+                                                    <img style="height: 60px;" src="../lottus-website/assets/logo-name-clear.png"
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                    <div class="comp-kkpgrpc9 YzqVVZ wixui-column-strip__column" id="comp-kkpgrpc9"><div id="bgLayers_comp-kkpgrpc9" data-hook="bgLayers" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-kkpgrpc9" class="VgO9Yg"></div></div><div data-mesh-id="comp-kkpgrpc9inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-kkpgrpc9inlineContent-gridContainer" data-testid="mesh-container-content"><wix-dropdown-menu id="comp-kkpgzzil" class="BSjLjI R7lArd comp-kkpgzzil wixui-dropdown-menu hidden-during-prewarmup" tabindex="-1" dir="ltr" data-stretch-buttons-to-menu-width="false" data-same-width-buttons="false" data-num-items="0" data-menuborder-y="0" data-menubtn-border="0" data-ribbon-els="0" data-label-pad="0" data-ribbon-extra="0" data-dropalign="center" style="visibility: inherit; overflow-x: visible;" data-dropmode="dropDown"><nav class="l9EQj1" id="comp-kkpgzzilnavContainer" aria-label="Site"><ul class="DN7syf" id="comp-kkpgzzilitemsContainer" style="text-align:center" data-marginallchildren="true"><li id="comp-kkpgzzil__more__" data-direction="ltr" data-listposition="center" data-state="menu false  header" data-index="__more__" data-dropdown="false" class="iryznZ vDnwi4" data-original-gap-between-text-and-btn="10" aria-hidden="true" style="height: 0px; overflow: hidden; position: absolute; visibility: hidden;"><div data-testid="linkElement" class="lY3Nwh" tabindex="0" aria-haspopup="false"><div class="rBTT56"><div class="" style="text-align:right"><p class="foFAdY" style="text-align:right" id="comp-kkpgzzil__more__label" tabindex="-1">More</p></div></div></div></li></ul><div class="JdScD2" id="comp-kkpgzzildropWrapper" data-dropalign="center" data-dropdown-shown="false"><ul class="k8K0Wj wixui-dropdown-menu__submenu" id="comp-kkpgzzilmoreContainer"></ul></div><div style="display:none" id="comp-kkpgzzilnavContainer-hiddenA11ySubMenuIndication">Use tab to navigate through the menu items.</div></nav></wix-dropdown-menu><div id="comp-leujl5hz" class="comp-leujl5hz wixui-vector-image"><div data-testid="svgRoot-comp-leujl5hz" class="aizuI7 TcoJIb comp-leujl5hz"><svg preserveAspectRatio="none" data-bbox="20 49 160 102" viewBox="20 49 160 102" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape" role="presentation" aria-hidden="true">
                     <g>
                         <path d="M180 138.25V151H20v-12.75h160z"></path>
                         <path d="M180 49v12.75H20V49h160z"></path>
@@ -13606,8 +13721,64 @@
                                                     <div data-mesh-id="comp-lfhba4e2inlineContent-gridContainer"
                                                          data-testid="mesh-container-content">
                                                         <div id="comp-lfhb8yg6" class="OQ8Tzd comp-lfhb8yg6"
-                                                             style="overflow: hidden; height: 761px;">
-                                                          <iframe class="nKphmK" title="Wix FAQ" aria-label="Wix FAQ" scrolling="no" src="https://wixlabs-wix-faq-11.appspot.com/index?pageId=c1dmp&amp;compId=comp-lfhb8yg6&amp;viewerCompId=comp-lfhb8yg6&amp;siteRevision=67&amp;viewMode=site&amp;deviceType=desktop&amp;locale=en&amp;tz=America%2FToronto&amp;regionalLanguage=en&amp;width=1041&amp;height=761&amp;instance=WV9Igup5zTzTCnFSgvuk81y60yyrDkmBX5JGk0bYjKs.eyJpbnN0YW5jZUlkIjoiNTI4NmYyZDUtNTg3MS00N2QwLWJiNTctN2JmZjQ1NDg0YzViIiwiYXBwRGVmSWQiOiIxNGM5MmQyOC0wMzFlLTc5MTAtYzlhOC1hNjcwMDExZTA2MmQiLCJtZXRhU2l0ZUlkIjoiYTIyZDFkZWEtMzUyYS00MWQzLThjNjUtYTI4YTE1MzFlYWFjIiwic2lnbkRhdGUiOiIyMDIzLTAzLTI1VDE5OjI3OjIyLjQwMFoiLCJkZW1vTW9kZSI6ZmFsc2UsImFpZCI6ImQ2N2VlY2Y2LWM0M2EtNGU3OS04MTNjLWViMjdlNDZiZjM5NiIsImJpVG9rZW4iOiJmMGFiZWYzZi02ZDViLTA2MDMtMzczMi1kOTc1NTA3OWE2ZjciLCJzaXRlT3duZXJJZCI6IjA1NTYzYTQ1LWFjNjEtNDI1Yi05YzcwLTY5MTNjNGQyZmI2YyJ9&amp;currency=CAD&amp;currentCurrency=CAD&amp;commonConfig=%7B%22brand%22%3A%22wix%22%2C%22bsi%22%3A%22c75d7d38-da2c-4915-9ee7-668280d8079b%7C1%22%2C%22BSI%22%3A%22c75d7d38-da2c-4915-9ee7-668280d8079b%7C1%22%7D&amp;vsi=c86d810d-73bf-44d2-9a53-56b0727f677a" allowfullscreen="" allowtransparency="true" allowvr="true" frameborder="0" allow="autoplay;camera;microphone;geolocation;vr"></iframe>                                                        </div>
+                                                             style="overflow: hidden; height: 780px;">
+                                                            <section class="faq-section">
+                                                                <h1>Frequently asked questions</h1>
+                                                                <div class="faq-container">
+                                                                    <div class="faq-item">
+                                                                        <h2 class="faq-question">How does a blockchain-based lottery work?
+                                                                        </h2>
+                                                                        <p class="faq-answer">A blockchain-based lottery works by creating a decentralized and immutable ledger of all transactions. Every ticket sale and winner payout is recorded on the blockchain, ensuring that the lottery is fair and transparent. Smart contracts are used to automate many manual processes and ensure that the lottery operates exactly as intended.
+
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="faq-item">
+                                                                        <h2 class="faq-question">How does tokenization of lottery tickets work?
+
+                                                                        </h2>
+                                                                        <p class="faq-answer">Tokenization of lottery tickets involves creating a unique digital token that represents each ticket. These tokens are recorded on the blockchain and can be verified independently, providing players with a greater sense of trust in the system.
+
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="faq-item">
+                                                                        <h2 class="faq-question">Is a blockchain-based lottery more secure than traditional lotteries?
+                                                                        </h2>
+                                                                        <p class="faq-answer">Yes, a blockchain-based lottery offers enhanced security compared to traditional lotteries. By leveraging cryptography and smart contracts, it eliminates the possibility of tampering or fraud. The decentralized network also eliminates central points of failure that are vulnerable to cyber attacks.
+
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="faq-item">
+                                                                        <h2 class="faq-question">Can players verify their tickets and winnings independently?
+
+                                                                        </h2>
+                                                                        <p class="faq-answer">Yes, with our software, players can verify their tickets and winnings independently, providing them with a greater sense of trust in the system. Every transaction is recorded on the blockchain, creating an immutable ledger of all transactions.
+
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="faq-item">
+                                                                        <h2 class="faq-question">How does a Lottus increase efficiency?
+                                                                        </h2>
+                                                                        <p class="faq-answer">Our software can increase efficiency by automating many manual processes, such as ticket issuance, ticket validation, and prize payouts. Additionally, by eliminating intermediaries and operating on a decentralized network, it can significantly reduce overhead costs associated with running traditional lotteries.
+
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="faq-item">
+                                                                        <h2 class="faq-question">How can our lottery organization implement Lottus?
+
+                                                                        </h2>
+                                                                        <p class="faq-answer">Our blockchain leveraged software solution can be easily integrated into your existing lottery system, offering a seamless transition to a more efficient, secure, and transparent system. Our team of experts will work closely with your organization to ensure a smooth implementation process and provide ongoing support.
+
+                                                                        </p>
+                                                                    </div>
+                                                                    <div class="faq-item">
+                                                                        <h2 class="faq-question">What benefits does Lottus offer to lottery organizations?
+                                                                        </h2>
+                                                                        <p class="faq-answer">Our solution offers increased transparency, enhanced security, and greater efficiency. This can lead to higher participation rates, increased revenue, and reduced costs associated with running traditional lotteries. Additionally, it can improve player trust and confidence in the system, leading to greater customer satisfaction.
+
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                            </section>
                                                     </div>
                                                 </div>
                                             </section>
@@ -13687,6 +13858,16 @@
                                                     </div>
                                                 </div>
                                             </section>
+                                            <div class="bottom-inc-footer" style="width: 100%; height: 50px; border: 2px solid black; background-color: #170249; display: flex; flex-direction: row; align-items: center;">
+                                                <div style="width: 50%; margin-left: 6%;">
+                                                    <p style="color: white;">
+                                                        2023 Lottus. All rights reserved.
+                                                    </p>
+                                                </div>
+                                                <div>
+
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -13705,142 +13886,6 @@
                     <div id="SITE_FOOTER" class="xU8fqS SITE_FOOTER wixui-footer" tabindex="-1">
                         <div class="_C0cVf">
                             <div class="_4XcTfy" data-testid="screenWidthContainerBg"></div>
-                        </div>
-                        <div class="U4Bvut">
-                            <div class="G5K6X8">
-                                <div class="gUbusX" data-testid="screenWidthContainerBgCenter"></div>
-                            </div>
-                            <div class="CJF7A2">
-                                <div data-mesh-id="SITE_FOOTERinlineContent" data-testid="inline-content" class="">
-                                    <div data-mesh-id="SITE_FOOTERinlineContent-gridContainer"
-                                         data-testid="mesh-container-content">
-                                        <section id="comp-kkplz3cr" class="comp-kkplz3cr Lw0u6i wixui-column-strip">
-                                            <div id="bgLayers_comp-kkplz3cr" data-hook="bgLayers" class="MW5IWV">
-                                                <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
-                                                <div id="bgMedia_comp-kkplz3cr" class="VgO9Yg"></div>
-                                            </div>
-                                            <div data-testid="columns" class="So7Ias">
-                                                <div id="comp-kkplz3ea"
-                                                     class="comp-kkplz3ea YzqVVZ wixui-column-strip__column">
-                                                    <div id="bgLayers_comp-kkplz3ea" data-hook="bgLayers"
-                                                         class="MW5IWV">
-                                                        <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
-                                                        <div id="bgMedia_comp-kkplz3ea" class="VgO9Yg"></div>
-                                                    </div>
-                                                    <div data-mesh-id="comp-kkplz3eainlineContent"
-                                                         data-testid="inline-content" class="">
-                                                        <div data-mesh-id="comp-kkplz3eainlineContent-gridContainer"
-                                                             data-testid="mesh-container-content">
-                                                            <div id="comp-kkpm0f2k"
-                                                                 class="KcpHeO tz5f0K comp-kkpm0f2k wixui-rich-text"
-                                                                 data-testid="richTextElement"><p class="font_9"
-                                                                                                  style="line-height:normal; font-size:13px;">
-                                                                <span style="letter-spacing:0.18em;"><span
-                                                                        class="color_11">2023 Lottus. All rights reserved.</span></span>
-                                                            </p></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div id="comp-kkplzh0k"
-                                                     class="comp-kkplzh0k YzqVVZ wixui-column-strip__column">
-                                                    <div id="bgLayers_comp-kkplzh0k" data-hook="bgLayers"
-                                                         class="MW5IWV">
-                                                        <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
-                                                        <div id="bgMedia_comp-kkplzh0k" class="VgO9Yg"></div>
-                                                    </div>
-                                                    <div data-mesh-id="comp-kkplzh0kinlineContent"
-                                                         data-testid="inline-content" class="">
-                                                        <div data-mesh-id="comp-kkplzh0kinlineContent-gridContainer"
-                                                             data-testid="mesh-container-content">
-                                                            <div id="comp-kkpmrj5u" class="comp-kkpmrj5u WzbAF8">
-                                                                <ul class="mpGTIt" aria-label="Social Bar">
-                                                                    <li id="dataItem-kkpmrj7i-comp-kkpmrj5u"
-                                                                        class="O6KwRn"><a data-testid="linkElement"
-                                                                                          href="https://www.twitter.com/wix"
-                                                                                          target="_blank"
-                                                                                          rel="noreferrer noopener"
-                                                                                          class="oRtuWN">
-                                                                        <wow-image id="img_0_comp-kkpmrj5u"
-                                                                                   class="HlRz5e YaS0jR"
-                                                                                   data-image-info="{&quot;containerId&quot;:&quot;dataItem-kkpmrj7i-comp-kkpmrj5u&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:200,&quot;height&quot;:200,&quot;uri&quot;:&quot;01ab6619093f45388d66736ec22e5885.png&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}"
-                                                                                   data-bg-effect-name=""
-                                                                                   data-has-ssr-src=""
-                                                                                   style="--wix-img-max-width:max(200px, 100%)"
-                                                                                   data-src="https://static.wixstatic.com/media/01ab6619093f45388d66736ec22e5885.png/v1/fill/w_44,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/01ab6619093f45388d66736ec22e5885.png">
-                                                                            <img alt="Twitter"
-                                                                                 style="width: 22px; height: 22px; object-fit: cover;"
-                                                                                 fetchpriority="high"
-                                                                                 src="https://static.wixstatic.com/media/01ab6619093f45388d66736ec22e5885.png/v1/fill/w_44,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/01ab6619093f45388d66736ec22e5885.png">
-                                                                        </wow-image>
-                                                                    </a></li>
-                                                                    <li id="dataItem-kmnaou8y-comp-kkpmrj5u"
-                                                                        class="O6KwRn"><a data-testid="linkElement"
-                                                                                          href="https://www.linkedin.com/company/wix-com"
-                                                                                          target="_blank"
-                                                                                          rel="noreferrer noopener"
-                                                                                          class="oRtuWN">
-                                                                        <wow-image id="img_1_comp-kkpmrj5u"
-                                                                                   class="HlRz5e YaS0jR"
-                                                                                   data-image-info="{&quot;containerId&quot;:&quot;dataItem-kmnaou8y-comp-kkpmrj5u&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:200,&quot;height&quot;:200,&quot;uri&quot;:&quot;7528824071724d12a3e6c31eee0b40d4.png&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}"
-                                                                                   data-bg-effect-name=""
-                                                                                   data-has-ssr-src=""
-                                                                                   style="--wix-img-max-width:max(200px, 100%)"
-                                                                                   data-src="https://static.wixstatic.com/media/7528824071724d12a3e6c31eee0b40d4.png/v1/fill/w_44,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7528824071724d12a3e6c31eee0b40d4.png">
-                                                                            <img alt="LinkedIn"
-                                                                                 style="width: 22px; height: 22px; object-fit: cover;"
-                                                                                 fetchpriority="high"
-                                                                                 src="https://static.wixstatic.com/media/7528824071724d12a3e6c31eee0b40d4.png/v1/fill/w_44,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/7528824071724d12a3e6c31eee0b40d4.png">
-                                                                        </wow-image>
-                                                                    </a></li>
-                                                                    <li id="dataItem-leua7nn7-comp-kkpmrj5u"
-                                                                        class="O6KwRn">
-                                                                        <div data-testid="linkElement" class="oRtuWN">
-                                                                            <wow-image id="img_2_comp-kkpmrj5u"
-                                                                                       class="HlRz5e YaS0jR"
-                                                                                       data-image-info="{&quot;containerId&quot;:&quot;dataItem-leua7nn7-comp-kkpmrj5u&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;imageData&quot;:{&quot;width&quot;:201,&quot;height&quot;:201,&quot;uri&quot;:&quot;11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}"
-                                                                                       data-bg-effect-name=""
-                                                                                       data-has-ssr-src=""
-                                                                                       style="--wix-img-max-width:max(201px, 100%)"
-                                                                                       data-src="https://static.wixstatic.com/media/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png/v1/fill/w_44,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png">
-                                                                                <img alt="Instagram"
-                                                                                     style="width: 22px; height: 22px; object-fit: cover;"
-                                                                                     fetchpriority="high"
-                                                                                     src="https://static.wixstatic.com/media/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png/v1/fill/w_44,h_44,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/11062b_cef3b719166a4815b446d4dcfcb6120d~mv2.png">
-                                                                            </wow-image>
-                                                                        </div>
-                                                                    </li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                        <section id="comp-kkpmh2qh" class="comp-kkpmh2qh Lw0u6i wixui-column-strip">
-                                            <div id="bgLayers_comp-kkpmh2qh" data-hook="bgLayers" class="MW5IWV">
-                                                <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
-                                                <div id="bgMedia_comp-kkpmh2qh" class="VgO9Yg"></div>
-                                            </div>
-                                            <div data-testid="columns" class="So7Ias">
-                                                <div id="comp-kkpmh2tg1"
-                                                     class="comp-kkpmh2tg1 YzqVVZ wixui-column-strip__column">
-                                                    <div id="bgLayers_comp-kkpmh2tg1" data-hook="bgLayers"
-                                                         class="MW5IWV">
-                                                        <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
-                                                        <div id="bgMedia_comp-kkpmh2tg1" class="VgO9Yg"></div>
-                                                    </div>
-                                                    <div data-mesh-id="comp-kkpmh2tg1inlineContent"
-                                                         data-testid="inline-content" class="">
-                                                        <div data-mesh-id="comp-kkpmh2tg1inlineContent-gridContainer"
-                                                             data-testid="mesh-container-content"></div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                                        <div data-mesh-id="SITE_FOOTERinlineContent-wedge-3"></div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </footer>
@@ -13898,6 +13943,21 @@
 }</script>
 <!-- warmup data end -->
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var header = document.getElementById('SITE_HEADER');
+        var fadeOutClass = 'fade-out';
 
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 50) {
+                header.classList.add(fadeOutClass);
+                header.style.opacity = 0;
+            } else {
+                header.classList.remove(fadeOutClass);
+                header.style.opacity = 1;
+            }
+        });
+    });
+</script>
 </body>
 </html>
